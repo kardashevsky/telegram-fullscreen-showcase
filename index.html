@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Окно 375x812</title>
+  <title>Размер окна</title>
   <style>
     html, body {
       margin: 0;
@@ -12,29 +12,26 @@
       justify-content: center;
       align-items: center;
       background: #f0f0f0;
+      font-family: monospace;
+      font-size: 20px;
     }
-    .phone {
-      width: 375px;
-      height: 812px;
-      background: #fff;
-      border: 2px solid #000;
-      display: flex;
-      flex-direction: column;
-    }
-    .bar {
-      height: 10px;
-      background: #000;
-      margin: 5px 0;
+    .container {
+      text-align: center;
     }
   </style>
 </head>
 <body>
-  <div class="phone">
-    <div class="bar"></div>
-    <div class="bar"></div>
-    <div class="bar"></div>
-    <div class="bar"></div>
-    <div class="bar"></div>
+  <div class="container">
+    <div id="size"></div>
   </div>
+
+  <script>
+    const size = document.getElementById('size');
+    function update() {
+      size.textContent = `${window.innerWidth} × ${window.innerHeight}`;
+    }
+    window.addEventListener('resize', update);
+    update();
+  </script>
 </body>
 </html>
